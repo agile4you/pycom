@@ -7,7 +7,7 @@ Python class development toolkit.
 __author__ = 'Papavassiliou Vassilis'
 __date__ = '2015-12-1'
 __version__ = '0.0.1'
-__all__ = []
+__all__ = ['classproperty', 'cached_property', 'cached_classproperty']
 
 
 import functools
@@ -25,7 +25,7 @@ class ClassPropertyDescriptor(object):
         self.fset = fset
 
     def __get__(self, obj, cls=None):
-        if cls is None:
+        if cls is None:  # pragma: no cover
             cls = type(obj)
         return self.fget.__get__(obj, cls)()
 
@@ -63,7 +63,7 @@ def cached_property(fun):
             return self._cache[fun]
         except AttributeError:
             self._cache = {}
-        except KeyError:
+        except KeyError:  # pragma: no cover
             pass
         ret = self._cache[fun] = fun(self)
         return ret
@@ -83,7 +83,7 @@ def cached_classproperty(fun):
             return cls.__cache[fun]
         except AttributeError:
             cls.__cache = {}
-        except KeyError:
+        except KeyError:  # pragma: no cover
             pass
         ret = cls.__cache[fun] = fun(cls)
         return ret
