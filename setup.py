@@ -4,7 +4,7 @@ from distutils.core import setup
 setup(
     name='pycom',
     version='0.0.1',
-    packages=['test', 'pycom'],
+    packages=['pycom'],
     url='https://github.com/agile4you/pycom',
     license='GLPv3',
     author='Papavassiliou Vassilis',
