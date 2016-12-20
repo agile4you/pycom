@@ -6,7 +6,7 @@ __author__ = 'Papavassiliou Vassilis'
 
 
 import pytest
-import pycom.cls
+import pycom.attr
 
 
 @pytest.fixture(scope='module')
@@ -23,7 +23,7 @@ def mock_cls():
 def test_cls_cached_property_pass(mock_cls):
     """Testing `pycom.cls.cached_classproperty` pass.
     """
-    mock_cls.cls_prop = pycom.cls.cached_classproperty(
+    mock_cls.cls_prop = pycom.attr.cached_classproperty(
         lambda cls: 'Hi there!'
     )
 
@@ -33,7 +33,7 @@ def test_cls_cached_property_pass(mock_cls):
 def test_cached_property_pass(mock_cls):
     """Testing `pycom.cls.cached_property` pass.
     """
-    mock_cls.inst_prop = pycom.cls.cached_property(
+    mock_cls.inst_prop = pycom.attr.cached_property(
         lambda cls: 'Hi there!'
     )
 

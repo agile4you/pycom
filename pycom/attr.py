@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""`pycom.class` module.
+"""`pycom.attr` module.
 
 Python class development toolkit.
 """

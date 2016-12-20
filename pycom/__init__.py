@@ -22,10 +22,10 @@ Python development common toolkit.
 
 __author__ = 'Papavassiliou Vassilis'
 __date__ = '2015-12-1'
-__version__ = '0.0.1'
-__all__ = ['cls', 'fn', 'decorators']
+__version__ = '0.1'
+__all__ = ['attr', 'fn', 'decorators']
 
 
-import cls
-import fn
-import decorators
+from pycom import attr
+from pycom import fn
+from pycom import decorators
